@@ -40,7 +40,28 @@ src/
 
 ## API Configuration
 
-The frontend is configured to connect to the Rails API at `http://localhost:3000/api/v1`. Make sure the Rails server is running before starting the frontend.
+The frontend connects to the Rails API. The API URL can be configured via environment variable:
+
+### Default Configuration
+
+By default, the frontend connects to `http://localhost:3000/api/v1`.
+
+### Custom API URL
+
+To use a different API URL, create a `.env` file in the `frontend` directory:
+
+```bash
+REACT_APP_API_URL=http://your-api-host:port/api/v1
+```
+
+For example:
+- `REACT_APP_API_URL=http://localhost:3000/api/v1` (default)
+- `REACT_APP_API_URL=http://api.example.com/api/v1` (production)
+- `REACT_APP_API_URL=http://192.168.1.100:3000/api/v1` (local network)
+
+**Note:** After changing the `.env` file, restart the development server for changes to take effect.
+
+Make sure the Rails server is running and accessible at the configured URL before starting the frontend.
 
 ## Usage
 

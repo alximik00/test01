@@ -2,6 +2,9 @@ require 'net/http'
 require 'uri'
 require 'json'
 
+BOOM_AUTH_URL = 'https://app.boomnow.com/open_api/v1/auth/token'.freeze
+BOOM_LISTINGS_URL = 'https://app.boomnow.com/open_api/v1/listings'.freeze
+
 class Api::V1::ListingsController < ApplicationController
   # Listings search is public, secured via BOOM client credentials
 
@@ -34,7 +37,7 @@ class Api::V1::ListingsController < ApplicationController
     # https://boomnow.stoplight.io/docs/boom-booking-api/e9k2w4m3hoj3i-returns-all-listings
     # this request retrieves listings and can be filtered by location and dates.
     # We call the production API host using the token obtained from the auth endpoint.
-    uri = URI.parse('https://app.boomnow.com/open_api/v1/listings')
+    uri = URI.parse(BOOM_LISTINGS_URL)
 
     query = {
       city: city,
@@ -68,7 +71,7 @@ class Api::V1::ListingsController < ApplicationController
     raise 'BOOM_CLIENT_ID not configured' unless client_id.present?
     raise 'BOOM_CLIENT_SECRET not configured' unless client_secret.present?
 
-    uri = URI.parse('https://app.boomnow.com/open_api/v1/auth/token')
+    uri = URI.parse(BOOM_AUTH_URL)
 
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = uri.scheme == 'https'

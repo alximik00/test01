@@ -30,6 +30,13 @@ npm start
 
 The frontend will run on `http://localhost:3000` (or another port if 3000 is taken)
 
+**Optional:** Configure the API URL by creating a `.env` file in the `frontend` directory:
+```
+REACT_APP_API_URL=http://localhost:3000/api/v1
+```
+
+If not set, it defaults to `http://localhost:3000/api/v1`. This is useful when the API is running on a different host or port.
+
 ## Database Setup
 
 The Rails API uses MySQL with the following credentials:
