@@ -3,8 +3,7 @@ require 'uri'
 require 'json'
 
 class Api::V1::ListingsController < ApplicationController
-  # Listings search is public for this demo, secured via BOOM client credentials
-  skip_before_action :authenticate_user_from_token!
+  # Listings search is public, secured via BOOM client credentials
 
   def index
     city      = params[:city]

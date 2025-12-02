@@ -1,6 +1,5 @@
 class Api::V1::CitiesController < ApplicationController
   # City autocomplete is public
-  skip_before_action :authenticate_user_from_token!
 
   def index
     query = params[:q].to_s.strip

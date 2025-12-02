@@ -1,6 +1,6 @@
 # React Frontend Project
 
-A React frontend application with Redux for state management, connected to the Rails API.
+A React frontend application for searching and viewing property listings, with city autocomplete and Redux state management.
 
 ## Setup
 
@@ -18,10 +18,11 @@ The application will be available at `http://localhost:3000`
 
 ## Features
 
-- User authentication (Login/Signup)
-- Items CRUD operations
-- Redux for state management
-- Protected routes
+- Listings search with city, check-in, and check-out date filters
+- City autocomplete with suggestions dropdown
+- Listing details view with extended information
+- Pagination support for search results
+- Redux Toolkit for state management
 - Modern UI with inline styles
 
 ## Project Structure
@@ -29,14 +30,10 @@ The application will be available at `http://localhost:3000`
 ```
 src/
   components/
-    Login.js          - Login component
-    Signup.js         - Signup component
-    ItemsList.js      - Items list and management
-    ItemForm.js       - Create/Edit item form
+    SearchPage.js      - Main search and listings display component
   store/
     store.js          - Redux store configuration
-    authSlice.js      - Authentication state management
-    itemsSlice.js     - Items state management
+    listingsSlice.js  - Listings state management
   services/
     api.js            - Axios API client configuration
 ```
@@ -48,7 +45,18 @@ The frontend is configured to connect to the Rails API at `http://localhost:3000
 ## Usage
 
 1. Start the Rails API server first
-2. Start the React frontend
-3. Navigate to `http://localhost:3000`
-4. Sign up for a new account or login
-5. Create, view, edit, and delete items
+2. Ensure cities are imported in the database (see API README)
+3. Start the React frontend
+4. Navigate to `http://localhost:3000`
+5. Enter a city name (autocomplete will suggest cities)
+6. Select check-in and check-out dates (defaults to next week)
+7. Click "Search" to view listings
+8. Click on any listing card to view detailed information
+
+## Default Dates
+
+The search form automatically sets default dates:
+- Check-in: Next Monday (start of next week)
+- Check-out: Next Sunday (end of next week)
+
+These can be changed by the user before searching.
