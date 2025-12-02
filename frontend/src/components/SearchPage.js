@@ -213,7 +213,6 @@ const SearchPage = () => {
                   selectedListing.nickname ||
                   'Listing details'}
               </h2>
-              <div style={{ width: '80px' }}></div>
             </div>
             {selectedListing.picture && (
               <div style={styles.detailImageWrapper}>
@@ -426,7 +425,7 @@ const styles = {
   },
   form: {
     backgroundColor: '#fff',
-    borderRadius: '999px',
+    borderRadius: '10px',
     padding: '1rem',
     display: 'flex',
     flexDirection: 'column',
@@ -590,20 +589,22 @@ const styles = {
     borderRadius: '1rem',
     boxShadow: '0 18px 40px rgba(15, 23, 42, 0.15)',
     overflow: 'hidden',
+    textAlign: 'left',
   },
   detailHeader: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     padding: '1rem 1.25rem',
     borderBottom: '1px solid #e4e7eb',
+    gap: '1rem',
   },
   detailTitle: {
     margin: 0,
     fontSize: '1.3rem',
     color: '#1f2933',
+    textAlign: 'left',
     flex: 1,
-    textAlign: 'center',
   },
   backButton: {
     border: 'none',
@@ -629,18 +630,22 @@ const styles = {
   },
   detailBody: {
     padding: '1.25rem',
+    textAlign: 'left',
+    maxWidth: '100%',
   },
   detailMeta: {
     margin: 0,
     marginBottom: '0.75rem',
     fontSize: '0.95rem',
     color: '#7b8794',
+    textAlign: 'left',
   },
   detailPriceBox: {
     borderRadius: '0.75rem',
     backgroundColor: '#eff3ff',
     padding: '0.9rem 1rem',
     marginBottom: '1rem',
+    textAlign: 'left',
   },
   detailPriceMain: {
     display: 'flex',
@@ -663,9 +668,11 @@ const styles = {
     marginTop: '0.35rem',
     fontSize: '0.85rem',
     color: '#52606d',
+    textAlign: 'left',
   },
   detailSection: {
     marginTop: '0.75rem',
+    textAlign: 'left',
   },
   detailSectionTitle: {
     margin: 0,
@@ -673,12 +680,14 @@ const styles = {
     fontSize: '0.95rem',
     fontWeight: 600,
     color: '#1f2933',
+    textAlign: 'left',
   },
   detailSectionText: {
     margin: 0,
     fontSize: '0.9rem',
     color: '#52606d',
     whiteSpace: 'pre-wrap',
+    textAlign: 'left',
   },
   detailFooter: {
     padding: '1rem 1.25rem 1.25rem',
