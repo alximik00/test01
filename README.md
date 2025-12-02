@@ -15,7 +15,7 @@ bundle install
 rails db:create
 rails db:migrate
 rails cities:import  # Import cities for autocomplete (see below)
-rails server
+BOOM_CLIENT_SECRET=<boom_client_secret> BOOM_CLIENT_ID=<boom_client_id> rails server
 ```
 
 The API will run on `http://localhost:3000`

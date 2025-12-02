@@ -24,7 +24,7 @@ This imports unique city names from `db/seed_data/uscities.csv`. The CSV file sh
 
 4. Start the Rails server:
 ```bash
-rails server
+BOOM_CLIENT_SECRET=<boom_client_secret> BOOM_CLIENT_ID=<boom_client_id> rails server
 ```
 
 The API will be available at `http://localhost:3000`
